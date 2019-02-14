@@ -1,0 +1,20 @@
+<form (ngSubmit)="doLogin()" #loginForm="ngForm">
+  <div class="row login-box">
+    <div class="col s12 m4 offset-m4 center">
+      <img class="circle responsive-img" src="http://lorempixel.com/150/150/">
+    </div>
+    <div class="input-field col s12 m4 offset-m4">
+      <i class="material-icons prefix">account_circle</i>
+      <input id="email" name="email" [(ngModel)]="login.email" required="required" #email_f ="ngModel"
+             type="email" class="validate" [placeholder]="'login.email-placeholder' | translate">
+      <label for="email" [attr.data-error]="'login.email-error' | translate">{{'login.email' | translate}}</label>
+    </div>
+    <div class="input-field col s12 m4 offset-m4">
+      <i class="material-icons prefix">lock</i>
+      <input id="password" name="password" [(ngModel)]="login.password" required="required"
+             type="password" class="validate" [placeholder]="'login.password-placeholder' | translate ">
+      <label for="password" [attr.data-error]="'login.password-error' | translate">{{ 'login.password' | translate }}</label>
+    </div>
+    <button type="submit" class="col s10 offset-s1 m4 offset-m4 btn blue darken-3" [disabled]="!loginForm.form.valid" >{{ 'login.login-button' | translate}}</button>
+  </div>
+</form>
