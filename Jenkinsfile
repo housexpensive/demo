@@ -10,6 +10,7 @@ pipeline {
           agent any
           steps {
               sh "docker --version"
+              sh sudo usermod -aG docker jenkins
               sh "docker build -t ${env.imageName} ."
           }
        }
