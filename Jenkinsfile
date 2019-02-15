@@ -40,6 +40,7 @@ pipeline {
                   } catch (e){
                     sh "docker service create --name demo -p ${env.port}:80 ${env.imageName}"
                     sh "echo create service"
+                    sh "docker --version"
                   }
               }
           }
